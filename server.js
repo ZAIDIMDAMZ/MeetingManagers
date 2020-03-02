@@ -1,0 +1,56 @@
+const express = require('express')
+const app = express()
+// let https =require('https')
+const http = require('http').Server(app)
+const io = require('socket.io')(http)
+const port = process.env.PORT || 3000
+let fs =require("fs")
+
+app.use(express.static(__dirname + "/public"))
+let clients = 0
+
+io.on('connection', function (socket) {
+    socket.on("NewClient", function () {
+        if (clients < 2) {
+            if (clients == 1) {
+                this.emit('CreatePeer')
+            }
+        }
+        else
+            this.emit('SessionActive')
+        clients++;
+    })
+    socket.on('Offer', SendOffer)
+    socket.on('Answer', SendAnswer)
+    socket.on('disconnect', Disconnect)
+})
+
+function Disconnect() {
+    if (clients > 0) {
+        if (clients <= 2)
+            this.broadcast.emit("Disconnect")
+        clients--
+    }
+}
+
+function SendOffer(offer) {
+    this.broadcast.emit("BackOffer", offer)
+}
+
+function SendAnswer(data) {
+    this.broadcast.emit("BackAnswer", data)
+}
+
+// https.createServer({
+//     key: fs.readFileSync('server.key'),
+//     cert: fs.readFileSync('server.cert')
+// }, app)
+
+// .listen(port, function () {
+//     console.log('Example app listening on port 3000! Go to https://localhost:3000/')
+// });
+
+http.listen(port, () => console.log(`Active on ${port} port`))
+
+
+
