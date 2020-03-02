@@ -41,16 +41,4 @@ function SendAnswer(data) {
     this.broadcast.emit("BackAnswer", data)
 }
 
-// https.createServer({
-//     key: fs.readFileSync('server.key'),
-//     cert: fs.readFileSync('server.cert')
-// }, app)
-
-// .listen(port, function () {
-//     console.log('Example app listening on port 3000! Go to https://localhost:3000/')
-// });
-
 http.listen(port, () => console.log(`Active on ${port} port`))
-
-
-
