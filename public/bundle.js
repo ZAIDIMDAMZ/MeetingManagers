@@ -14,6 +14,9 @@ for (var i = 0, len = code.length; i < len; ++i) {
   lookup[i] = code[i]
   revLookup[code.charCodeAt(i)] = i
 }
+// var { Timer } = require('lib/easytimer/dist/easytimer.min.js');
+// var { Timer } = require('easytimer.js');
+var timerInstance = new Timer();
 
 // Support decoding URL-safe base64 strings, as Node.js does.
 // See: https://en.wikipedia.org/wiki/Base64#URL_applications
@@ -7671,3 +7674,15 @@ function CreateDiv() {
 }
 
 },{"simple-peer":24}]},{},[31]);
+
+
+
+function startTimer(){
+    console.log("hello2");
+    var timer = new Timer();
+    timer.start();
+    timer.addEventListener('secondsUpdated', function (e) {
+    $('#basicUsage').html(timer.getTimeValues().toString());
+    });
+
+}

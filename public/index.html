@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Video Chat App</title>
+    <title>Meeting Manager App</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="main.css" rel="stylesheet">
@@ -23,15 +23,15 @@
                 </select>
             </div>
             <div class="col">
-                <div class="float-right mt-3">
-                    <input class="form-check-input" type="checkbox" id="theme">
-                    <label class="form-check-label" for="theme">
-                        Dark Theme
-                    </label>
-                </div>
+                <div class="button_cont" onclick="startTimer()" align="center">
+                    <a class="example_a"  target="_blank" rel="nofollow noopener">Demander la parole</a>
+                </div> 
             </div>
-        </div>
-        <div class="row h-90 w-100">
+            <div class="col"> 
+            <div id="basicUsage">00:00:00</div>
+            </div>
+        </div> 
+        <div class="row h-100 w-100">
             <div class="col-12 col-sm-6 d-flex justify-content-center">
                 <div class="embed-responsive embed-responsive-16by9">
                     <video class="embed-responsive-item" muted></video>
@@ -41,11 +41,29 @@
                 <div id="peerDiv" class="embed-responsive embed-responsive-16by9">
                 </div>
             </div>
+
+            <div class="col-sm-12">
+                <div class="alert fade alert-simple alert-info alert-dismissible text-left font__family-montserrat font__size-16 font__weight-light brk-library-rendered rendered show" role="alert" data-brk-library="component__alert">
+                  <button type="button" class="close font__size-18" data-dismiss="alert">
+                                            <span aria-hidden="true">
+                                                <i class="fa fa-times blue-cross"></i>
+                                            </span>
+                                            <span class="sr-only">Close</span>
+                                        </button>
+                  <i class="start-icon  fa fa-info-circle faa-shake animated"></i>
+                  <strong class="font__weight-semibold">Stop !</strong> Votre correspondant as demander la parole !!
+                </div>
+            </div>
         </div>
     </div>
 
+  
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
     <script src="bundle.js"></script>
+    
 </body>
 
 </html>

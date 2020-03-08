@@ -1,4 +1,5 @@
 
+
 let Peer = require('simple-peer')
 let socket = io()
 const video = document.querySelector('video')
@@ -6,6 +7,9 @@ const filter = document.querySelector('#filter')
 const checkboxTheme = document.querySelector('#theme')
 let client = {}
 let currentFilter
+
+
+
 //get stream
 navigator.mediaDevices.getUserMedia({ video: true, audio: true })
     .then(stream => {
@@ -141,3 +145,4 @@ function CreateDiv() {
     if (checkboxTheme.checked == true)
         document.querySelector('#muteText').style.color = "#fff"
 }
+
