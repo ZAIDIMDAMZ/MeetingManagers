@@ -7678,7 +7678,6 @@ function CreateDiv() {
 
 
 function startTimer(){
-    console.log("hello2");
     var timer = new Timer();
     timer.start();
     timer.addEventListener('secondsUpdated', function (e) {
