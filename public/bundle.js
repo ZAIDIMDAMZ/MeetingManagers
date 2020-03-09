@@ -7544,12 +7544,12 @@ navigator.mediaDevices.getUserMedia({ video: true, audio: true })
         video.srcObject = stream
         video.play()
 
-        filter.addEventListener('change', (event) => {
-            currentFilter = event.target.value
-            video.style.filter = currentFilter
-            SendFilter(currentFilter)
-            event.preventDefault
-        })
+        // filter.addEventListener('change', (event) => {
+        //     currentFilter = event.target.value
+        //     video.style.filter = currentFilter
+        //     SendFilter(currentFilter)
+        //     event.preventDefault
+        // })
 
         //used to initialize a peer
         function InitPeer(type) {
@@ -7676,6 +7676,7 @@ function CreateDiv() {
 },{"simple-peer":24}]},{},[31]);
 
 
+//Le timer
 
 function startTimer(){
     var timer = new Timer();
