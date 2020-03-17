@@ -1,5 +1,8 @@
 body{
     font-weight: 600 !important;
+    font-family: monospace;
+    font-size: 18px;
+      
 }
 video {
     transform: rotateY(180deg); 
@@ -160,4 +163,14 @@ transition: all 0.4s ease 0s;
       height: 20px;
 }
 
+#transcript{
 
+    background-color: #f8f9fa;
+    color: black;
+    transition: 0.5s;
+    margin-top: 25px;
+
+}
+.titre{
+    text-decoration: underline;
+}

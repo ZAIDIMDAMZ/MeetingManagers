@@ -1,3 +1,8 @@
+const path = require('path')
+const request = require('request')
+const bodyParser = require('body-parser')
+const config = require('config')
+
 const express = require('express')
 const app = express()
 // let https =require('https')
@@ -6,6 +11,9 @@ const io = require('socket.io')(http)
 const port = process.env.PORT || 3000
 let fs =require("fs")
 
+
+// app.use(bodyParser.json())
+// app.use(bodyParser.urlencoded({ extended: true })) // support encoded bodies
 app.use(express.static(__dirname + "/public"))
 let clients = 0
 

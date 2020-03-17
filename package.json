@@ -9,12 +9,17 @@
   },
   "author": "Vinayak Sinha",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "config": "^3.3.0",
     "easytimer.js": "^4.1.1",
     "express": "^4.16.4",
     "fs": "0.0.1-security",
     "https": "^1.0.0",
+    "request": "^2.88.2",
     "simple-peer": "^9.2.1",
-    "socket.io": "^2.2.0"
+    "socket.io": "^2.2.0",
+    "speech-to-text": "^2.9.1",
+    "voice-speech-recognition": "^1.1.2"
   },
   "devDependencies": {
     "watchify": "^3.11.1"
